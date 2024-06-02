@@ -1,0 +1,6 @@
+export { default as ExploreIcon } from './explore-icon'
+export { default as HomeIcon } from './home-icon'
+export { default as LogoIcon } from './logo-icon'
+export { default as LogoutIcon } from './logout-icon'
+export { default as ProfileIcon } from './profile-icon'
+export { default as SignupIcon } from './signup-icon'
