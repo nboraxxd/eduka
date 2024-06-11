@@ -6,7 +6,7 @@ export default function NotFoundPage() {
   return (
     <div className="relative">
       <div className="py-5 lg:py-20">
-        <h1 className="mb-5 flex flex-col items-center gap-5 text-center bold-32 lg:bold-36">
+        <h1 className="mb-5 flex flex-col items-center gap-5 text-center text-bold-32 lg:text-bold-36">
           <span className="inline-block text-7xl">404</span>
           <span>Không tìm thấy trang</span>
         </h1>

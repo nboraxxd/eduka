@@ -3,6 +3,8 @@ import { Manrope } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import { cn } from '@/lib/utils'
+import { clerkAppearance } from '@/constants'
+import { ThemeProvider } from '@/components/provider'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
@@ -23,8 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(manrope.className, 'bg-background')}>
-        <ClerkProvider>{children}</ClerkProvider>
+      <body className={cn('bg-background font-manrope', manrope.variable)}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ClerkProvider appearance={clerkAppearance}>{children}</ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

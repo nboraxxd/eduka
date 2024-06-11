@@ -6,14 +6,14 @@ import LogoIcon from '@/components/icons/logo'
 
 interface Props {
   href: string | UrlObject
-  wrapperClassName?: string
+  className?: string
 }
 
-export default function Logo({ href, wrapperClassName }: Props) {
+export default function Logo({ href, className }: Props) {
   return (
-    <Link href={href} className={cn('flex items-center gap-2', wrapperClassName)}>
+    <Link href={href} className={cn('flex items-center gap-2', className)}>
       <LogoIcon className="size-10" />
-      <h2 className="text-foreground bold-20">Eduka</h2>
+      <h2 className="text-bold-20 text-foreground">Eduka.</h2>
     </Link>
   )
 }

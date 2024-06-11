@@ -7,7 +7,11 @@ import {
   OrderIcon,
   UsersIcon,
   CommentIcon,
+  ChartBarIcon,
+  StarIcon,
+  EyeIcon,
 } from '@/components/icons'
+import React from 'react'
 
 export const NAVIGATION_LINKS = [
   {
@@ -68,3 +72,21 @@ export const AUTHENTICATION_LINKS = [
     label: 'Đăng ký',
   },
 ] as const
+
+export const COURSE_METRICS = [
+  {
+    label: 'Tổng số học viên',
+    value: 'Trung bình',
+    icon: (className?: string) => React.createElement(ChartBarIcon, { className }),
+  },
+  {
+    label: 'Đánh giá',
+    value: 5,
+    icon: (className?: string) => React.createElement(StarIcon, { className }),
+  },
+  {
+    label: 'Lượt xem',
+    value: 378,
+    icon: (className?: string) => React.createElement(EyeIcon, { className }),
+  },
+]
