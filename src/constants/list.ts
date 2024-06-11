@@ -1,4 +1,4 @@
-import { ExploreIcon, HomeIcon, ProfileIcon } from '@/components/icons'
+import { ExploreIcon, HomeIcon, ProfileIcon, SignUpIcon } from '@/components/icons'
 
 export const NAVIGATION_LINKS = [
   {
@@ -18,5 +18,20 @@ export const NAVIGATION_LINKS = [
     icon: ProfileIcon,
     href: '/profile',
     label: 'Cá nhân',
+  },
+] as const
+
+export const AUTHENTICATION_LINKS = [
+  {
+    id: 4,
+    icon: ProfileIcon,
+    href: '/sign-in',
+    label: 'Đăng nhập',
+  },
+  {
+    id: 5,
+    icon: SignUpIcon,
+    href: '/sign-up',
+    label: 'Đăng ký',
   },
 ] as const

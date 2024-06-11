@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
 import { cn } from '@/lib/utils'
-import Sidebar from '@/components/shared/sidebar'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
@@ -24,10 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(manrope.className, 'bg-background')}>
-        <div className="grid h-screen grid-cols-[var(--sidebar-width),minmax(0,1fr)]">
-          <Sidebar />
-          <main>{children}</main>
-        </div>
+        <ClerkProvider>{children}</ClerkProvider>
       </body>
     </html>
   )

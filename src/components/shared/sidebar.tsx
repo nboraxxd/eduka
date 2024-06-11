@@ -1,7 +1,8 @@
-import { NAVIGATION_LINKS } from '@/constants/list'
-import { Button } from '@/components/ui/button'
+import { AUTHENTICATION_LINKS, NAVIGATION_LINKS } from '@/constants/list'
 import Logo from '@/components/shared/logo'
-import SidebarLink from '@/components/shared/sidebar-link'
+import SidebarIem from '@/components/shared/sidebar-item'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
 
 export default function Sidebar() {
   return (
@@ -11,16 +12,32 @@ export default function Sidebar() {
       <ul className="my-5 space-y-3">
         {NAVIGATION_LINKS.map(({ href, icon: Icon, id, label }) => (
           <li key={id}>
-            <SidebarLink href={href}>
+            <SidebarIem href={href}>
               <Icon className="size-5" />
               <span className="medium-16">{label}</span>
-            </SidebarLink>
+            </SidebarIem>
           </li>
         ))}
       </ul>
 
       <div className="mt-auto">
-        <Button className="w-full">Logout</Button>
+        <SignedOut>
+          <ul className="space-y-4">
+            {AUTHENTICATION_LINKS.map(({ href, icon: Icon, id, label }) => (
+              <li key={id}>
+                <SidebarIem href={href} variant={href === '/sign-in' ? 'signIn' : 'signUp'}>
+                  <Icon className="size-5" />
+                  <span className="medium-16">{label}</span>
+                </SidebarIem>
+              </li>
+            ))}
+          </ul>
+        </SignedOut>
+        <SignedIn>
+          <Button className="w-full">
+            <UserButton />
+          </Button>
+        </SignedIn>
       </div>
     </aside>
   )
