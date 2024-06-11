@@ -12,8 +12,8 @@ const sidebarItemVariants = cva('flex items-center gap-3 rounded-lg p-3 py-2.5 t
     variant: {
       default: 'text-foreground hover:bg-primary/10 hover:text-primary',
       active: 'svg-animate bg-primary/10 text-primary',
-      signIn: 'justify-center text-secondary-foreground bg-secondary/90 hover:bg-secondary',
-      signUp: 'justify-center text-primary-foreground bg-primary/90 hover:bg-primary',
+      signIn: 'justify-center text-primary-foreground bg-primary/90 hover:bg-primary',
+      signUp: 'justify-center text-secondary-foreground bg-secondary/90 hover:bg-secondary',
     },
   },
   defaultVariants: {
