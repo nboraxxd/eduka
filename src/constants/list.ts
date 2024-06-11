@@ -1,6 +1,6 @@
 import { ExploreIcon, HomeIcon, ProfileIcon } from '@/components/icons'
 
-export const SIDEBARLINKS = [
+export const NAVIGATION_LINKS = [
   {
     id: 1,
     icon: HomeIcon,

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
-import { Sidebar } from '@/components/shared'
+import Sidebar from '@/components/shared/sidebar'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })

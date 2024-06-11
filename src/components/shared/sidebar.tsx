@@ -1,7 +1,7 @@
-import { Logo } from '@/components/shared'
+import { NAVIGATION_LINKS } from '@/constants/list'
 import { Button } from '@/components/ui/button'
-import { SIDEBARLINKS } from '@/constants'
-import Link from 'next/link'
+import Logo from '@/components/shared/logo'
+import SidebarLink from '@/components/shared/sidebar-link'
 
 export default function Sidebar() {
   return (
@@ -9,15 +9,12 @@ export default function Sidebar() {
       <Logo href="/" wrapperClassName="h-20 py-3" />
 
       <ul className="my-5 space-y-3">
-        {SIDEBARLINKS.map(({ href, icon: Icon, id, label }) => (
+        {NAVIGATION_LINKS.map(({ href, icon: Icon, id, label }) => (
           <li key={id}>
-            <Link
-              href={href}
-              className="flex items-center gap-3 rounded-lg p-3 py-2.5 text-item-foreground transition-colors hover:bg-primary/10 hover:text-primary"
-            >
+            <SidebarLink href={href}>
               <Icon className="size-5" />
               <span className="medium-16">{label}</span>
-            </Link>
+            </SidebarLink>
           </li>
         ))}
       </ul>
