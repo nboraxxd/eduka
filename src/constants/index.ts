@@ -12,6 +12,9 @@ export const clerkAppearance = {
     footerActionText: 'text-muted-foreground',
     footerActionLink: 'text-foreground hover:text-foreground/90',
 
+    formResendCodeLink: 'text-muted-foreground',
+    otpCodeFieldInput: 'bg-primary-foreground',
+
     card: 'bg-card',
     footer: {
       background: 'hsl(var(--card))',
