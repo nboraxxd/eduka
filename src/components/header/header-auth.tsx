@@ -33,10 +33,10 @@ export default function HeaderAuth() {
       }}
     />
   ) : (
-    <Button asChild size="lg" className="h-10 gap-1.5 px-5">
+    <Button asChild size="icon" className="gap-1.5 md:w-auto md:px-5">
       <Link href="/sign-in">
-        <ProfileIcon className="size-5" />
-        Đăng nhập
+        <ProfileIcon className="size-5 md:hidden" />
+        <span className="hidden md:inline">Đăng nhập</span>
       </Link>
     </Button>
   )

@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <Sidebar />
       <div className="lg:pl-sidebar-width">
         <Header />
-        <main className="min-h-[calc(100vh-var(--header-height))] p-5 lg:px-8 lg:py-10">{children}</main>
+        <main className="container min-h-[calc(100vh-var(--header-height))] p-5 lg:px-8 lg:py-10">{children}</main>
       </div>
     </div>
   )

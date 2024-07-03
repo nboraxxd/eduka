@@ -10,23 +10,22 @@ import { Button } from '@/components/ui/button'
 export default function SidebarFooter() {
   const { isSignedIn, signOut } = useAuth()
 
-  const [isSignedInLocal, setIsSignedInLocal] = useState<boolean | undefined>(undefined)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setIsSignedInLocal(isSignedIn)
-  }, [isSignedIn])
+    setMounted(true)
+  }, [])
 
-  if (isSignedInLocal === undefined && isSignedIn === undefined) return null
+  if (!mounted) return null
 
   return (
     <div className="mt-auto">
       {!isSignedIn ? (
         <ul className="space-y-4">
-          {AUTHENTICATION_LINKS.map(({ href, icon: Icon, id, label }) => (
+          {AUTHENTICATION_LINKS.map(({ href, id, label }) => (
             <li key={id}>
-              <SidebarItem href={href} variant={href === '/sign-in' ? 'signIn' : 'signUp'}>
-                <Icon className="size-5" />
-                <span className="text-medium-16">{label}</span>
+              <SidebarItem href={href} variant={href === '/sign-in' ? 'signIn' : 'signUp'} className="text-medium-16">
+                {label}
               </SidebarItem>
             </li>
           ))}

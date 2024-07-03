@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 const sidebarItemVariants = cva('flex items-center gap-3 rounded-lg p-3 py-2.5 transition-colors', {
   variants: {
     variant: {
-      default: 'text-sidebar-foreground hover:bg-sidebar-active/10 hover:text-sidebar-active-foreground',
+      default: 'text-sidebar-foreground hover:text-sidebar-active-foreground',
       active: 'svg-animate bg-sidebar-active/10 text-sidebar-active-foreground',
       signIn: 'justify-center text-primary-foreground bg-primary/90 hover:bg-primary',
       signUp: 'justify-center text-secondary-foreground bg-secondary/90 hover:bg-secondary',
