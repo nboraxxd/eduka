@@ -14,8 +14,8 @@ export interface IUser extends Document {
   courses: Schema.Types.ObjectId[]
   status: keyof typeof UserStatus
   role: keyof typeof UserRole
-  createdAt?: Date
-  updatedAt?: Date
+  createdAt: Date
+  updatedAt: Date
 }
 
 const userSchema = new Schema<IUser>(
