@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import { AuthProvider, ThemeProvider } from '@/components/provider'
 import './globals.css'
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { UrlObject } from 'url'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import LogoIcon from '@/components/icons/logo'
 
 interface Props {
