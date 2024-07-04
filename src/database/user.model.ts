@@ -9,7 +9,7 @@ export interface IUser extends Document {
   clerkId: string
   username: string
   email: string
-  avatar: string | null
+  avatar: string
   name: string | null
   courses: Schema.Types.ObjectId[]
   status: keyof typeof UserStatus
@@ -23,7 +23,7 @@ const userSchema = new Schema<IUser>(
     clerkId: { type: String, required: true, unique: true },
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
-    avatar: { type: String, default: null },
+    avatar: { type: String, required: true },
     name: { type: String, default: null },
     courses: [{ type: Schema.Types.ObjectId, ref: 'Course' }],
     status: { type: String, required: true, enum: Object.values(UserStatus), default: 'Active' },
