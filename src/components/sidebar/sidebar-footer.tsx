@@ -16,11 +16,11 @@ export default function SidebarFooter() {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted || isSignedIn === undefined) return null
 
   return (
     <div className="mt-auto">
-      {!isSignedIn ? (
+      {isSignedIn === false ? (
         <ul className="space-y-4">
           {AUTHENTICATION_LINKS.map(({ href, id, label }) => (
             <li key={id}>
