@@ -29,7 +29,7 @@ export const NAVIGATION_LINKS = [
   {
     id: uuidv4(),
     icon: BoltIcon,
-    href: '/manage/course',
+    href: '/manage/courses',
     label: 'Quản lý khóa học',
   },
   {

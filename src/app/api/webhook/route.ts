@@ -48,7 +48,7 @@ export async function POST(req: Request) {
       }),
     ])
 
-    return NextResponse.json({ message: 'Created user', data: response })
+    return NextResponse.json(response)
   }
 
   return new Response('OK', { status: 200 })

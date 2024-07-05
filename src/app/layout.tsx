@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
+import { Toaster } from '@/components/ui/sonner'
 
+import { AuthProvider, TanstackQueryProvider, ThemeProvider } from '@/components/provider'
 import { cn } from '@/utils'
-import { AuthProvider, ThemeProvider } from '@/components/provider'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
@@ -24,11 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('bg-background font-manrope', manrope.variable)}>
-        <AuthProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
-        </AuthProvider>
+        <TanstackQueryProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              {children}
+              <Toaster />
+            </ThemeProvider>
+          </AuthProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   )

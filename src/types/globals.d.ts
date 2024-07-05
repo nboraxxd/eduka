@@ -5,7 +5,7 @@ export {}
 declare global {
   interface CustomJwtSessionClaims {
     metadata: {
-      role: keyof typeof UserRole
+      role?: keyof typeof UserRole
     }
   }
 }
